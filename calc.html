@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  body{
+      overflow:hidden;
+      background-color:grey;
+  }
+  .manu{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      width:100%;
+      box-shadow:5px 5px 5px black;
+      
+      
+  }
+  #userinput{
+      width:80%;
+      height:100%;
+      padding:30px;
+      box-shadow:5px 5px 5px black;
+      border:none;
+      border-radius:6px;
+      
+  }
+  button{
+      background-color:red;
+      padding:30px;
+      border-radius:5px;
+      border:none;
+      margin-top:10px;
+      box-shadow:5px 5px 5px blue;
+  }
+  </style>
+  </head>
+  <div class="manu">
+    <div class="calculator">
+    <input id="userinput" placeholder="0">
+       <br>
+    <button onclick="press(1)">1</button>
+    <button onclick="press(2)">2</button>
+    <button onclick="press(3)">3</button>
+    <button onclick="press('+')">+</button>
+       <br>
+    <button onclick="press(4)">4</button>
+    <button onclick="press(5)">5</button>
+    <button onclick="press(6)">6</button>
+    <button onclick="press('-')">-</button>
+      <br>
+    <button onclick="press(7)">7</button>
+    <button onclick="press(8)">8</button>
+    <button onclick="press(0)">0</button>
+    <button onclick="press('*')">*</button>
+    <br>
+    <button onclick="press('/')">/</button>
+    <button onclick="press('.')">.</button>
+    <button onclick="clear()">C</button>
+    <button onclick="equal()">=</button>
+    
+    </div>
+  
+  </div>
+  <script>
+  var userinput=document.getElementByI ind("userinput");
+   var expression="";
+   function press(num){
+       expression += num;
+       userinput.value = expression;
+   }
+   function equal(){
+       userinput.value = eval(expression);
+       expression = "";
+       
+   }
+   function clear(){
+       expression = "";
+       userinput.value = expression;
+       
+   }
+  </script>
+  </body>
+</html>
